@@ -1,8 +1,6 @@
 // you need to set mergeParams: true on the router,
 // if you want to access params from the parent router
 const router = require('express').Router({ mergeParams: true });
-// const router = require('express').Router();
-const Task = require('./task.model');
 // const boardsService = require('./board.service');
 const tasksService = require('./task.service');
 
@@ -18,10 +16,13 @@ router.route('/:id').get(async (req, res) => {
     const task = await tasksService.get(req.params.boardId, req.params.id);
 
     if (task) {
-      res.json(Task.toResponse(task));
-      // res.send(200).json(task);
+      // res.json(task);
+      res.status(200).json(task);
+    } else {
+      res.status(404).send('TASK NOT FOUND');
     }
   } catch (e) {
+    // console.log(e.message);
     res.status(404).send(e.message);
   }
 });
@@ -31,17 +32,25 @@ router.route('/').post(async (req, res) => {
   try {
     const task = await tasksService.create(
       req.params.boardId,
-      new Task({
-        title: req.body.title,
-        order: req.body.order,
-        description: req.body.description,
-        userId: req.body.userId,
-        boardId: req.body.boardId,
-        columnId: req.body.columnId
-      })
+      req.body
+      // new Task({
+      //   id: req.body.id,
+      //   title: req.body.title,
+      //   order: req.body.order,
+      //   description: req.body.description,
+      //   userId: req.body.userId,
+      //   boardId: req.body.boardId,
+      //   columnId: req.body.columnId
+      // })
     );
 
-    res.status(200).json(task);
+    if (task) {
+      res.status(200).json(task);
+    } else if (task === null) {
+      res.status(404).send('Task not found');
+    } else {
+      res.status(400).send('Bad request');
+    }
     // console.log(res);
   } catch (e) {
     console.log(e);
@@ -49,20 +58,23 @@ router.route('/').post(async (req, res) => {
 });
 
 router.route('/:id').put(async (req, res) => {
-  const task = await tasksService.update(
-    req.params.boardId,
-    req.params.id,
-    new Task({
-      title: req.body.title,
-      order: req.body.order,
-      description: req.body.description,
-      userId: req.body.userId,
-      boardId: req.body.boardId,
-      columnId: req.body.columnId
-    })
-  );
+  try {
+    const task = await tasksService.update(
+      req.params.boardId,
+      req.params.id,
+      req.body
+    );
 
-  res.status(200).json(task);
+    if (task) {
+      res.status(200).json(task);
+    } else if (task === null) {
+      res.status(404).send('Task not found');
+    } else {
+      res.status(400).send('Bad request');
+    }
+  } catch (e) {
+    console.log(e);
+  }
 });
 
 router.route('/:id').delete(async (req, res) => {
@@ -73,8 +85,6 @@ router.route('/:id').delete(async (req, res) => {
     res.status(404).send('Not found');
     console.log(e);
   }
-
-  // также должен удалять все таски этого usera! надо сделать
 });
 
 module.exports = router;

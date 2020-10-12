@@ -6,9 +6,9 @@ class Task {
     title = 'Task 1',
     order = 0,
     description = 'Just do it',
-    userId = 'null',
-    boardId = 'null',
-    columnId = 'null'
+    userId = '',
+    boardId = '',
+    columnId = ''
   } = {}) {
     this.id = id;
     this.title = title;
@@ -22,6 +22,10 @@ class Task {
   static toResponse(task) {
     const { id, title, order, userId, boardID, columnId } = task;
     return { id, title, order, userId, boardID, columnId };
+  }
+
+  static makeTask(body) {
+    return new Task(body);
   }
 }
 

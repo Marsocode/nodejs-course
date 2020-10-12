@@ -16,8 +16,8 @@ const get = async (boardId, id) => {
   return task;
 };
 
-const create = async (boardId, id) => {
-  return tasksDB.createTask(boardId, id);
+const create = async (boardId, taskBody) => {
+  return tasksDB.createTask(boardId, taskBody);
 };
 
 // обновляем данные пользователя (пользователь достается по id)

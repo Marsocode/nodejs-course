@@ -1,10 +1,9 @@
-// jshint esversion:7
 // const User = require('../resources/users/user.model');
 // const Board = require('../resources/boards/board.model');
-// const Task = require('../resources/tasks/task.model');
+const Task = require('../resources/tasks/task.model');
 const DB = [];
 const boardsDB = [];
-const tasksDB = [];
+let tasksDB = [];
 
 // Users
 // добавим новых юзеров
@@ -13,7 +12,7 @@ const tasksDB = [];
 // переносим всю логику обработки данных из user.memory.repository сюда
 // делаем доп общий метод и передаем туда копию массива DB, чтобы с самой DB ничего не случилось
 const getAllUsers = async () => {
-  return DB.slice(0);
+  return DB;
 };
 
 const getUser = async id => {
@@ -49,7 +48,7 @@ const removeUser = async id => {
 
 const getAllBoards = async () => {
   // console.log(boardsDB);
-  return boardsDB.slice(0);
+  return boardsDB;
 };
 
 const getBoard = async id => {
@@ -58,25 +57,28 @@ const getBoard = async id => {
 
 const createBoard = async board => {
   boardsDB.push(board);
-  return board;
+  const dbBoard = await getBoard(board.id);
+  if (!dbBoard) {
+    throw new Error('Board not created');
+  }
+  return dbBoard;
 };
 
 const updateBoard = async (id, board) => {
-  // console.log(board);
-  boardsDB.filter(el => el.id === id.toString())[0].title = board.title;
-  boardsDB.filter(el => el.id === id.toString())[0].columns = board.columns;
+  boardsDB.filter(el => el.id === id)[0].title = board.title;
+  boardsDB.filter(el => el.id === id)[0].columns = board.columns;
 
-  return boardsDB.filter(el => el.id === id.toString())[0];
+  return boardsDB.filter(el => el.id === id)[0];
 };
 
 const removeBoard = async id => {
-  await removeTasksByBoard(id);
-  const boardIdIndex = boardsDB.map(el => el.id).indexOf(id);
-  if (boardIdIndex > -1) {
-    // удалит 1 элемент по индексу
-    return boardsDB.splice(boardIdIndex, 1);
+  tasksDB = tasksDB.filter(el => el.boardId !== id);
+  const board = await getBoard(id.toString());
+  const index = boardsDB.indexOf(board);
+
+  if (index !== -1) {
+    return boardsDB.splice(index, 1);
   }
-  // удаляю все таски этого боарда
 };
 
 // Tasks
@@ -88,39 +90,44 @@ const getAllTasksByBoardId = async boardId => {
 };
 
 const getTasksByBoardIdAndByTaskId = async (boardId, id) => {
-  const tasks = await getAllTasksByBoardId(boardId);
+  const tasks = await getAllTasksByBoardId(boardId.toString());
+
   const taskById = tasks.filter(el => el.id === id.toString())[0];
   // console.log(taskById);
   return taskById;
 };
 
-const createTask = async (boardId, task) => {
+const createTask = async (boardId, taskBody) => {
   try {
+    const task = Task.makeTask(taskBody);
     task.boardId = boardId.toString();
     tasksDB.push(task);
     // console.log(tasksDB);
-    return task;
+    const dbTask = await getTasksByBoardIdAndByTaskId(task.boardId, task.id);
+    return dbTask;
+    // return task;
   } catch (e) {
     console.log(e);
   }
 };
 
 const updateTask = async (boardId, id, task) => {
-  const taskbyId = await getTasksByBoardIdAndByTaskId(boardId, id);
-  console.log(taskbyId);
-
-  if (!taskbyId) {
-    return null;
+  try {
+    const taskbyId = await getTasksByBoardIdAndByTaskId(
+      boardId.toString(),
+      id.toString()
+    );
+    if (!taskbyId) {
+      return null;
+    }
+    for (const [key, value] of Object.entries(task)) {
+      taskbyId[key] = value;
+    }
+    tasksDB[id.toString()] = taskbyId;
+    return taskbyId;
+  } catch (e) {
+    console.log(e);
   }
-
-  taskbyId.title = task.title;
-  taskbyId.order = task.order;
-  taskbyId.description = task.description;
-  taskbyId['userId'] = task.userId;
-  taskbyId['boardId'] = task.boardId;
-  taskbyId['columnId'] = task.columnId;
-
-  return taskbyId;
 };
 
 const removeTask = async (boardId, id) => {
@@ -138,12 +145,12 @@ const removeTask = async (boardId, id) => {
 };
 
 const removeTasksByBoard = async boardId => {
-  tasksDB.forEach((item, index) => {
-    if (item.boardId === boardId) {
-      tasksDB.splice(item[index], 1);
-    }
-  });
-  // tasksDB.filter(el => el.boardId !== boardId);
+  // tasksDB.forEach((item, index) => {
+  //   if (item.boardId === boardId) {
+  //     tasksDB.splice(item[index], 1);
+  //   }
+  // });
+  tasksDB = tasksDB.filter(el => el.boardId !== boardId);
 
   // console.log(tasksDB);
 };
@@ -154,6 +161,7 @@ const removeUserFromTask = async userId => {
     item.userId = null;
   });
 };
+
 module.exports = {
   getAllUsers,
   getAllBoards,
