@@ -12,7 +12,7 @@ class User {
     this.login = login;
     this.password = password;
   }
-
+  // не возвращаем пароль, так как небезопасно
   static toResponse(user) {
     const { id, name, login } = user;
     return { id, name, login };
