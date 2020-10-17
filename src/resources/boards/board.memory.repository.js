@@ -5,12 +5,7 @@ const getAll = async () => {
 };
 
 const get = async id => {
-  // если async, то добавляем await!!!
   const board = await boardsDB.getBoard(id);
-  // если board не найден, то показываем ошибку
-  if (!board) {
-    throw new Error(`The board with id: ${id} is undefined`);
-  }
 
   return board;
 };

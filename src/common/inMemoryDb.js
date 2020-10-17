@@ -43,7 +43,6 @@ const removeUser = async id => {
 };
 
 // Boards
-// Добавим новые boards
 // boardsDB.push(new Board(), new Board());
 
 const getAllBoards = async () => {
@@ -59,7 +58,7 @@ const createBoard = async board => {
   boardsDB.push(board);
   const dbBoard = await getBoard(board.id);
   if (!dbBoard) {
-    throw new Error('Board not created');
+    throw new Error('Board is not created');
   }
   return dbBoard;
 };
@@ -145,13 +144,7 @@ const removeTask = async (boardId, id) => {
 };
 
 const removeTasksByBoard = async boardId => {
-  // tasksDB.forEach((item, index) => {
-  //   if (item.boardId === boardId) {
-  //     tasksDB.splice(item[index], 1);
-  //   }
-  // });
   tasksDB = tasksDB.filter(el => el.boardId !== boardId);
-
   // console.log(tasksDB);
 };
 

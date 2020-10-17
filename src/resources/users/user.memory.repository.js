@@ -1,4 +1,4 @@
-// в DB лежат все users, поэтому импортируем сюда ля дальнейшей обработки
+// в DB лежат все users, поэтому импортируем сюда для дальнейшей обработки
 const DB = require('../../common/inMemoryDb');
 
 const getAll = async () => {
@@ -7,7 +7,6 @@ const getAll = async () => {
 
 // если запрос по id, то делаем функцию get- поиска запращиваемого id (так как у нас пока просто массив с юзерами, то используем метод getUser внутри которого filter)
 const get = async id => {
-  // если async, то добавляем await!!!
   const user = await DB.getUser(id);
   // если юзер не найден, то показываем ошибку
   if (!user) {
@@ -25,7 +24,6 @@ const create = async user => {
 // обновляем данные пользователя (пользователь достается по id)
 const update = async (id, user) => {
   // const matchUser = await DB.updateUser(id, user);
-
   // if (!matchUser) {
   //   throw new Error(`The user with id: ${id} is undefined. You can't update, but you can create!`);
   // }

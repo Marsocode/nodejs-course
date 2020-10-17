@@ -7,7 +7,6 @@ router.route('/').get(async (req, res) => {
   try {
     const boards = await boardsService.getAll();
     // тут мы ожидаем массив
-    // res.json(boards.map(Board.toResponse));
     res.status(200);
     res.json(boards);
   } catch (e) {
@@ -20,11 +19,13 @@ router.route('/:id').get(async (req, res) => {
     const board = await boardsService.get(req.params.id);
 
     if (board) {
-      res.json(Board.toResponse(board));
+      res.status(200);
+      res.json(board);
+    } else {
+      res.status(404).send('The board is not found!');
     }
   } catch (e) {
-    // console.log(e);
-    res.status(404).send(e.message);
+    console.log(e);
   }
 });
 
@@ -40,6 +41,8 @@ router.route('/').post(async (req, res) => {
 
     if (board) {
       res.status(200).json(board);
+    } else {
+      res.status(400).send('The board has not been created! Bad request');
     }
   } catch (e) {
     console.log(e);
@@ -58,6 +61,8 @@ router.route('/:id').put(async (req, res) => {
 
     if (board) {
       res.status(200).json(board);
+    } else {
+      res.status(400).send('The board has not been updated! Bad request');
     }
   } catch (e) {
     console.log(e);
