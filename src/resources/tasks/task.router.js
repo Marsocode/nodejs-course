@@ -1,5 +1,4 @@
-// you need to set mergeParams: true on the router,
-// if you want to access params from the parent router
+// you need to set mergeParams: true on the router, if you want to access params from the parent router
 const router = require('express').Router({ mergeParams: true });
 // const boardsService = require('./board.service');
 const tasksService = require('./task.service');

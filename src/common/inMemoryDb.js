@@ -13,16 +13,36 @@ let tasksDB = [];
 // переносим всю логику обработки данных из user.memory.repository сюда
 // делаем доп общий метод и передаем туда копию массива DB, чтобы с самой DB ничего не случилось
 const getAllUsers = async () => {
-  return DB;
+  try {
+    return DB;
+  } catch (e) {
+    logger.log('error', e.stack);
+    // console.log(e);
+  }
 };
 
 const getUser = async id => {
-  return DB.filter(el => el.id === id.toString())[0];
+  try {
+    const user = DB.filter(el => el.id === id.toString())[0];
+    return user;
+  } catch (e) {
+    logger.log('error', e.stack);
+    // console.log(e);
+  }
 };
 
 const createUser = async user => {
-  DB.push(user);
-  return user;
+  try {
+    DB.push(user);
+    const userDB = await getUser(user.id);
+    if (!userDB) {
+      throw new Error('User is not created');
+    }
+    return userDB;
+  } catch (e) {
+    logger.log('error', e.stack);
+    // console.log(e);
+  }
 };
 
 const updateUser = async (id, body) => {
@@ -45,17 +65,22 @@ const updateUser = async (id, body) => {
   // DB.filter(el => el.id === id.toString())[0].name = user.name;
   // DB.filter(el => el.id === id.toString())[0].login = user.login;
   // DB.filter(el => el.id === id.toString())[0].password = user.password;
-
   //   console.log(DB.filter(el => el.id === id));
   // return DB.filter(el => el.id === id.toString())[0];
 };
 
 const removeUser = async id => {
-  await removeUserFromTask(id);
-  const userIdIndex = DB.map(el => el.id).indexOf(id);
-  if (userIdIndex > -1) {
-    // удалит 1 элемент по индексу
-    return DB.splice(userIdIndex, 1);
+  try {
+    // user=null if his tasks deleteds
+    await removeUserFromTask(id);
+    // delete user
+    const userIdIndex = DB.map(el => el.id).indexOf(id);
+    if (userIdIndex > -1) {
+      // удалит 1 элемент по индексу
+      return DB.splice(userIdIndex, 1);
+    }
+  } catch (e) {
+    logger.log('error', e.stack);
   }
 };
 
@@ -63,21 +88,39 @@ const removeUser = async id => {
 // boardsDB.push(new Board(), new Board());
 
 const getAllBoards = async () => {
-  // console.log(boardsDB);
-  return boardsDB;
+  try {
+    // console.log(boardsDB);
+    return boardsDB;
+  } catch (e) {
+    logger.log('error', e.stack);
+    // console.log(e);
+  }
 };
 
 const getBoard = async id => {
-  return boardsDB.filter(el => el.id === id.toString())[0];
+  try {
+    const board = boardsDB.filter(el => el.id === id.toString())[0];
+    return board;
+  } catch (e) {
+    logger.log('error', e.stack);
+    // console.log(e);
+  }
 };
 
 const createBoard = async board => {
-  boardsDB.push(board);
-  const dbBoard = await getBoard(board.id);
-  if (!dbBoard) {
-    throw new Error('Board is not created');
+  try {
+    boardsDB.push(board);
+    const dbBoard = await getBoard(board.id);
+
+    if (!dbBoard) {
+      throw new Error('Board is not created');
+    }
+
+    return dbBoard;
+  } catch (e) {
+    logger.log('error', e.stack);
+    // console.log(e);
   }
-  return dbBoard;
 };
 
 const updateBoard = async (id, body) => {
@@ -95,23 +138,28 @@ const updateBoard = async (id, body) => {
     return board;
   } catch (e) {
     logger.log('error', e.stack);
+    // console.log(e);
   }
-
+  // old code
   // boardsDB.filter(el => el.id === id)[0].title = board.title;
   // boardsDB.filter(el => el.id === id)[0].columns = board.columns;
-
   // return boardsDB.filter(el => el.id === id)[0];
 };
 
 const removeBoard = async id => {
-  // delete all tasks through board
-  tasksDB = tasksDB.filter(el => el.boardId !== id);
-  // delete board
-  const board = await getBoard(id.toString());
-  const index = boardsDB.indexOf(board);
+  try {
+    // delete all tasks through board
+    tasksDB = tasksDB.filter(el => el.boardId !== id);
+    // delete board
+    const board = await getBoard(id.toString());
+    const index = boardsDB.indexOf(board);
 
-  if (index !== -1) {
-    return boardsDB.splice(index, 1);
+    if (index !== -1) {
+      return boardsDB.splice(index, 1);
+    }
+  } catch (e) {
+    logger.log('error', e.stack);
+    // console.log(e);
   }
 };
 
@@ -119,16 +167,25 @@ const removeBoard = async id => {
 // tasksDB.push( new Task());
 
 const getAllTasksByBoardId = async boardId => {
-  const tasks = tasksDB.filter(el => el.boardId === boardId.toString());
-  return tasks;
+  try {
+    const tasks = tasksDB.filter(el => el.boardId === boardId.toString());
+    return tasks;
+  } catch (e) {
+    logger.log('error', e.stack);
+    // console.log(e);
+  }
 };
 
 const getTasksByBoardIdAndByTaskId = async (boardId, id) => {
-  const tasks = await getAllTasksByBoardId(boardId.toString());
-
-  const taskById = tasks.filter(el => el.id === id.toString())[0];
-  // console.log(taskById);
-  return taskById;
+  try {
+    const tasks = await getAllTasksByBoardId(boardId.toString());
+    const taskById = tasks.filter(el => el.id === id.toString())[0];
+    // console.log(taskById);
+    return taskById;
+  } catch (e) {
+    logger.log('error', e.stack);
+    // console.log(e);
+  }
 };
 
 const createTask = async (boardId, taskBody) => {
@@ -167,17 +224,22 @@ const updateTask = async (boardId, id, task) => {
 };
 
 const removeTask = async (boardId, id) => {
-  const taskbyId = await getTasksByBoardIdAndByTaskId(
-    boardId.toString(),
-    id.toString()
-  );
-  const taskIndex = tasksDB.indexOf(taskbyId);
+  try {
+    const taskbyId = await getTasksByBoardIdAndByTaskId(
+      boardId.toString(),
+      id.toString()
+    );
+    const taskIndex = tasksDB.indexOf(taskbyId);
 
-  if (taskIndex < 0) {
-    return false;
+    if (taskIndex < 0) {
+      return false;
+    }
+    tasksDB.splice(taskIndex, 1);
+    return true;
+  } catch (e) {
+    logger.log('error', e.stack);
+    // console.log(e);
   }
-  tasksDB.splice(taskIndex, 1);
-  return true;
 };
 
 const removeTasksByBoard = async boardId => {
@@ -186,10 +248,15 @@ const removeTasksByBoard = async boardId => {
 };
 
 const removeUserFromTask = async userId => {
-  const task = tasksDB.filter(el => el.userId === userId);
-  task.forEach(item => {
-    item.userId = null;
-  });
+  try {
+    const task = tasksDB.filter(el => el.userId === userId);
+    task.forEach(item => {
+      item.userId = null;
+    });
+  } catch (e) {
+    logger.log('error', e.stack);
+    // console.log(e);
+  }
 };
 
 module.exports = {
