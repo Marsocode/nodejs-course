@@ -16,7 +16,6 @@ const logger = winston.createLogger({
       level: 'info',
       filename: logFilePath,
       format: winston.format.printf(i => (i.level === 'info' ? i.message : '')),
-      // format: winston.format.printf(info => i),
       json: true,
       maxsize: 5242880,
       maxFiles: 1,
@@ -68,7 +67,7 @@ morgan.token('body', req => {
 
 const requestLogger = morgan(
   // 'combined',
-  'DATE: :date[web] || METHOD: :method || URL: :url || QUERY PARAMETERS: :params || REQUEST BODY: :body || HTTP STATUS: :status || RESPONSE TIME: :response-time ms',
+  'DATE: :date[web] || METHOD: :method || URL: :url || PARAMETERS: :params || REQUEST BODY: :body || HTTP STATUS: :status || RESPONSE TIME: :response-time ms',
   { stream: logger.stream }
 );
 

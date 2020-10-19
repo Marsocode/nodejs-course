@@ -2,15 +2,15 @@ const router = require('express').Router();
 const User = require('./user.model');
 const usersService = require('./user.service');
 const { logger } = require('../../utils/logger');
+const createError = require('http-errors');
 
 router.route('/').get(async (req, res) => {
   // показываем всех users (реализация getAll пишется в отдельном файле service (то есть сама обработка данных))
-  // так как метод getAll (функция) асинхронный, то сюда передается промис,
-  // но тут у нас есть await (то есть в user уже попадет конкретное значение, того что нам надо)
+  // так как метод getAll (функция) асинхронный, то сюда передается промис,но тут у нас есть await (то есть в user уже попадет конкретное значение, того что нам надо)
   try {
     const users = await usersService.getAll();
+
     // map user fields to exclude secret fields like "password"
-    // тут мы ожидаем массив
     res.json(users.map(User.toResponse));
   } catch (e) {
     logger.error(e.stack);
@@ -18,7 +18,6 @@ router.route('/').get(async (req, res) => {
   }
 });
 
-// get user by ID (id передается как pass параметр (то есть напрямую http://localhost:4000/user/:id))
 router.route('/:id').get(async (req, res) => {
   try {
     const user = await usersService.get(req.params.id);
@@ -29,9 +28,13 @@ router.route('/:id').get(async (req, res) => {
       res.json(User.toResponse(user));
     } else {
       res.status(404).send('The user is not found!');
+      throw new createError(
+        404,
+        `The user with Id: ${req.params.id} is not found! HTTP STATUS CODE: ${res.statusCode}`
+      );
     }
   } catch (e) {
-    logger.error(e.stack);
+    logger.error(e.message);
     // console.log(e);
   }
 });
@@ -51,6 +54,10 @@ router.route('/').post(async (req, res) => {
       res.json(User.toResponse(user));
     } else {
       res.status(400).send('The user has not been created! Bad request');
+      throw new createError(
+        400,
+        `The user has not been created! Bad request. HTTP STATUS CODE: ${res.statusCode}`
+      );
     }
   } catch (e) {
     logger.error(e.stack);
@@ -74,6 +81,10 @@ router.route('/:id').put(async (req, res) => {
       res.json(User.toResponse(user));
     } else {
       res.status(400).send('The user has not been updated! Bad request');
+      throw new createError(
+        400,
+        `The user has not been updated! Bad request. HTTP STATUS CODE: ${res.statusCode}`
+      );
     }
   } catch (e) {
     logger.error(e.stack);
@@ -88,9 +99,13 @@ router.route('/:id').delete(async (req, res) => {
       res.status(204).send('The user has been deleted!');
     } else {
       res.status(404).send('The user is not found!');
+      throw new createError(
+        404,
+        `The user with Id: ${req.params.id} is not found! HTTP STATUS CODE: ${res.statusCode}`
+      );
     }
   } catch (e) {
-    res.send(e.message);
+    // res.send(e.message);
     logger.error(e.stack);
   }
 });

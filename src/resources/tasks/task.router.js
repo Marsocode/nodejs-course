@@ -3,6 +3,7 @@ const router = require('express').Router({ mergeParams: true });
 // const boardsService = require('./board.service');
 const tasksService = require('./task.service');
 const { logger } = require('../../utils/logger');
+const createError = require('http-errors');
 
 router.route('/').get(async (req, res) => {
   try {
@@ -24,6 +25,10 @@ router.route('/:id').get(async (req, res) => {
       res.status(200).json(task);
     } else {
       res.status(404).send('The task is not found!');
+      throw new createError(
+        404,
+        `The task with boardId: ${req.params.boardId} and taskId: ${req.params.id} is not found! HTTP STATUS CODE: ${res.statusCode}`
+      );
     }
   } catch (e) {
     logger.error(e.stack);
@@ -40,8 +45,16 @@ router.route('/').post(async (req, res) => {
       res.status(200).json(task);
     } else if (task === null) {
       res.status(404).send('The task is not found!');
+      throw new createError(
+        404,
+        `The task with boardId: ${req.params.boardId} is not found!`
+      );
     } else {
       res.status(400).send('The task has not been created! Bad request');
+      throw new createError(
+        400,
+        `The task has not been created! Bad request. HTTP STATUS CODE: ${res.statusCode}`
+      );
     }
     // console.log(res);
   } catch (e) {
@@ -62,8 +75,16 @@ router.route('/:id').put(async (req, res) => {
       res.status(200).json(task);
     } else if (task === null) {
       res.status(404).send('The task is not found!');
+      throw new createError(
+        404,
+        `The task with boardId: ${req.params.boardId} and taskId: ${req.params.id} is not found! HTTP STATUS CODE: ${res.statusCode}`
+      );
     } else {
       res.status(400).send('The task has not been updated! Bad request');
+      throw new createError(
+        400,
+        `The task has not been updated! Bad request. HTTP STATUS CODE: ${res.statusCode}`
+      );
     }
   } catch (e) {
     logger.error(e.stack);
@@ -81,6 +102,10 @@ router.route('/:id').delete(async (req, res) => {
       res.status(204).send('The task has been deleted!');
     } else {
       res.status(404).send('The task is not found!');
+      throw new createError(
+        404,
+        `The task with boardId: ${req.params.boardId} and taskId: ${req.params.id} is not found! HTTP STATUS CODE: ${res.statusCode}`
+      );
     }
   } catch (e) {
     // res.status(404).send('The task is not found!');
