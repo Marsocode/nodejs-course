@@ -1,5 +1,6 @@
 // const User = require('../resources/users/user.model');
 // const Board = require('../resources/boards/board.model');
+const { logger } = require('../utils/logger');
 const Task = require('../resources/tasks/task.model');
 const DB = [];
 const boardsDB = [];
@@ -24,13 +25,29 @@ const createUser = async user => {
   return user;
 };
 
-const updateUser = async (id, user) => {
-  DB.filter(el => el.id === id.toString())[0].name = user.name;
-  DB.filter(el => el.id === id.toString())[0].login = user.login;
-  DB.filter(el => el.id === id.toString())[0].password = user.password;
+const updateUser = async (id, body) => {
+  try {
+    const user = await getUser(id);
+
+    if (!user) {
+      return null;
+    }
+    for (const [key, value] of Object.entries(body)) {
+      user[key] = value;
+    }
+    DB[id.toString()] = user;
+
+    return user;
+  } catch (e) {
+    logger.log('error', e.stack);
+  }
+
+  // DB.filter(el => el.id === id.toString())[0].name = user.name;
+  // DB.filter(el => el.id === id.toString())[0].login = user.login;
+  // DB.filter(el => el.id === id.toString())[0].password = user.password;
 
   //   console.log(DB.filter(el => el.id === id));
-  return DB.filter(el => el.id === id.toString())[0];
+  // return DB.filter(el => el.id === id.toString())[0];
 };
 
 const removeUser = async id => {
@@ -63,15 +80,33 @@ const createBoard = async board => {
   return dbBoard;
 };
 
-const updateBoard = async (id, board) => {
-  boardsDB.filter(el => el.id === id)[0].title = board.title;
-  boardsDB.filter(el => el.id === id)[0].columns = board.columns;
+const updateBoard = async (id, body) => {
+  try {
+    const board = await getBoard(id);
 
-  return boardsDB.filter(el => el.id === id)[0];
+    if (!board) {
+      return null;
+    }
+    for (const [key, value] of Object.entries(body)) {
+      board[key] = value;
+    }
+    boardsDB[id.toString()] = board;
+
+    return board;
+  } catch (e) {
+    logger.log('error', e.stack);
+  }
+
+  // boardsDB.filter(el => el.id === id)[0].title = board.title;
+  // boardsDB.filter(el => el.id === id)[0].columns = board.columns;
+
+  // return boardsDB.filter(el => el.id === id)[0];
 };
 
 const removeBoard = async id => {
+  // delete all tasks through board
   tasksDB = tasksDB.filter(el => el.boardId !== id);
+  // delete board
   const board = await getBoard(id.toString());
   const index = boardsDB.indexOf(board);
 
@@ -106,7 +141,8 @@ const createTask = async (boardId, taskBody) => {
     return dbTask;
     // return task;
   } catch (e) {
-    console.log(e);
+    logger.log('error', e.stack);
+    // console.log(e);
   }
 };
 
@@ -125,7 +161,8 @@ const updateTask = async (boardId, id, task) => {
     tasksDB[id.toString()] = taskbyId;
     return taskbyId;
   } catch (e) {
-    console.log(e);
+    logger.log('error', e.stack);
+    // console.log(e);
   }
 };
 

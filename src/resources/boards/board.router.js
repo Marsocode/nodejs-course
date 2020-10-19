@@ -2,6 +2,7 @@ const router = require('express').Router();
 // const User = require('./user.model');
 const Board = require('./board.model');
 const boardsService = require('./board.service');
+const { logger } = require('../../utils/logger');
 
 router.route('/').get(async (req, res) => {
   try {
@@ -10,7 +11,8 @@ router.route('/').get(async (req, res) => {
     res.status(200);
     res.json(boards);
   } catch (e) {
-    console.log(e);
+    logger.error(e.stack);
+    // console.log(e);
   }
 });
 
@@ -25,7 +27,8 @@ router.route('/:id').get(async (req, res) => {
       res.status(404).send('The board is not found!');
     }
   } catch (e) {
-    console.log(e);
+    logger.error(e.stack);
+    // console.log(e);
   }
 });
 
@@ -45,7 +48,8 @@ router.route('/').post(async (req, res) => {
       res.status(400).send('The board has not been created! Bad request');
     }
   } catch (e) {
-    console.log(e);
+    logger.error(e.stack);
+    // console.log(e);
   }
 });
 
@@ -53,10 +57,11 @@ router.route('/:id').put(async (req, res) => {
   try {
     const board = await boardsService.update(
       req.params.id,
-      new Board({
-        title: req.body.title,
-        columns: req.body.columns
-      })
+      req.body
+      // new Board({
+      //   title: req.body.title,
+      //   columns: req.body.columns
+      // })
     );
 
     if (board) {
@@ -65,16 +70,22 @@ router.route('/:id').put(async (req, res) => {
       res.status(400).send('The board has not been updated! Bad request');
     }
   } catch (e) {
-    console.log(e);
+    logger.error(e.stack);
+    // console.log(e);
   }
 });
 
 router.route('/:id').delete(async (req, res) => {
   try {
-    await boardsService.remove(req.params.id);
-    res.status(204).send('The board has been deleted');
+    const deletedBoard = await boardsService.remove(req.params.id);
+    if (deletedBoard) {
+      res.status(204).send('The board has been deleted');
+    } else {
+      res.status(404).send('The board is not found!');
+    }
   } catch (e) {
-    console.log(e);
+    logger.error(e.stack);
+    // console.log(e);
   }
 });
 

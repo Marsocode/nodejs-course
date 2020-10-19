@@ -73,13 +73,15 @@ const requestLogger = morgan(
 );
 
 process.on('uncaughtException', error => {
-  logger.error(`captured error: ${error.message}`);
+  logger.error(`captured error: ${error.stack}`);
   // logger.error(`captured error: ${error.message}, ${error.stack}`);
 });
 
 process.on('unhandledRejection', reason => {
   logger.error(`Unhadled rejection detected: ${reason.message}`);
-  // logger.error(`Unhadled rejection detected: ${reason.message}, ${promise.stack}`);
+  // logger.error(
+  //   `Unhadled rejection detected: ${reason.message} : ${promise.stack}`
+  // );
 });
 
 const handlerErrors = (error, req, res) => {
@@ -87,4 +89,4 @@ const handlerErrors = (error, req, res) => {
   res.status(500).send('Internal server error');
 };
 
-module.exports = { requestLogger, handlerErrors };
+module.exports = { requestLogger, handlerErrors, logger };

@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const User = require('./user.model');
 const usersService = require('./user.service');
+const { logger } = require('../../utils/logger');
 
 router.route('/').get(async (req, res) => {
   // показываем всех users (реализация getAll пишется в отдельном файле service (то есть сама обработка данных))
@@ -12,7 +13,8 @@ router.route('/').get(async (req, res) => {
     // тут мы ожидаем массив
     res.json(users.map(User.toResponse));
   } catch (e) {
-    console.log(e);
+    logger.error(e.stack);
+    // console.log(e);
   }
 });
 
@@ -29,7 +31,8 @@ router.route('/:id').get(async (req, res) => {
       res.status(404).send('The user is not found!');
     }
   } catch (e) {
-    console.log(e);
+    logger.error(e.stack);
+    // console.log(e);
   }
 });
 
@@ -50,7 +53,8 @@ router.route('/').post(async (req, res) => {
       res.status(400).send('The user has not been created! Bad request');
     }
   } catch (e) {
-    console.log(e);
+    logger.error(e.stack);
+    // console.log(e);
   }
 });
 
@@ -58,11 +62,12 @@ router.route('/:id').put(async (req, res) => {
   try {
     const user = await usersService.update(
       req.params.id,
-      new User({
-        login: req.body.login,
-        password: req.body.password,
-        name: req.body.name
-      })
+      req.body
+      // new User({
+      //   login: req.body.login,
+      //   password: req.body.password,
+      //   name: req.body.name
+      // })
     );
     if (user) {
       res.status(200);
@@ -71,16 +76,22 @@ router.route('/:id').put(async (req, res) => {
       res.status(400).send('The user has not been updated! Bad request');
     }
   } catch (e) {
-    console.log(e);
+    logger.error(e.stack);
+    // console.log(e);
   }
 });
 
 router.route('/:id').delete(async (req, res) => {
   try {
-    await usersService.remove(req.params.id);
-    res.status(204).send('The user has been deleted!');
+    const deletedUser = await usersService.remove(req.params.id);
+    if (deletedUser) {
+      res.status(204).send('The user has been deleted!');
+    } else {
+      res.status(404).send('The user is not found!');
+    }
   } catch (e) {
     res.send(e.message);
+    logger.error(e.stack);
   }
 });
 

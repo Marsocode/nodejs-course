@@ -21,13 +21,13 @@ const create = async user => {
 };
 
 // обновляем данные пользователя (пользователь достается по id)
-const update = async (id, user) => {
+const update = async (id, body) => {
   // const matchUser = await DB.updateUser(id, user);
   // if (!matchUser) {
   //   throw new Error(`The user with id: ${id} is undefined. You can't update, but you can create!`);
   // }
 
-  return await DB.updateUser(id, user);
+  return await DB.updateUser(id, body);
 };
 
 const remove = async id => {

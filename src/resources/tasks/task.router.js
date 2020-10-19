@@ -3,6 +3,7 @@
 const router = require('express').Router({ mergeParams: true });
 // const boardsService = require('./board.service');
 const tasksService = require('./task.service');
+const { logger } = require('../../utils/logger');
 
 router.route('/').get(async (req, res) => {
   try {
@@ -10,7 +11,8 @@ router.route('/').get(async (req, res) => {
 
     res.status(200).json(tasksByBoardId);
   } catch (e) {
-    console.log(e);
+    logger.error(e.stack);
+    // console.log(e);
   }
 });
 
@@ -25,7 +27,8 @@ router.route('/:id').get(async (req, res) => {
       res.status(404).send('The task is not found!');
     }
   } catch (e) {
-    console.log(e);
+    logger.error(e.stack);
+    // console.log(e);
   }
 });
 
@@ -43,7 +46,8 @@ router.route('/').post(async (req, res) => {
     }
     // console.log(res);
   } catch (e) {
-    console.log(e);
+    logger.error(e.stack);
+    // console.log(e);
   }
 });
 
@@ -63,17 +67,26 @@ router.route('/:id').put(async (req, res) => {
       res.status(400).send('The task has not been updated! Bad request');
     }
   } catch (e) {
-    console.log(e);
+    logger.error(e.stack);
+    // console.log(e);
   }
 });
 
 router.route('/:id').delete(async (req, res) => {
   try {
-    await tasksService.remove(req.params.boardId, req.params.id);
-    res.status(204).send('The task has been deleted!');
+    const deletedTask = await tasksService.remove(
+      req.params.boardId,
+      req.params.id
+    );
+    if (deletedTask) {
+      res.status(204).send('The task has been deleted!');
+    } else {
+      res.status(404).send('The task is not found!');
+    }
   } catch (e) {
-    res.status(404).send('The task is not found!');
-    console.log(e);
+    // res.status(404).send('The task is not found!');
+    logger.error(e.stack);
+    // console.log(e);
   }
 });
 

@@ -27,18 +27,13 @@ app.use('/users', userRouter);
 app.use('/boards', boardRouter);
 boardRouter.use('/:boardId/tasks', taskRouter);
 
-app.use(handlerErrors);
-// if (app.get('NODE_ENV') === 'development') {
-//   app.use((err, req, res, next) => {
-//     res.status(500).send('fdgdfgdfg');
-//     console.log(err.stack);
-//   });
-// }
 // app.use((err, req, res, next) => {
 //   console.log(err.stack);
 //   res.status(err.status || 500).send('Something broke!');
 //   next();
 // });
+
+app.use(handlerErrors);
 
 // To check task3 "Logging & Error Handling" point 3: добавлены обработка и логирование ошибок на событие uncaughtException
 // throw Error('Oops!');

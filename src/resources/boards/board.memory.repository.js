@@ -14,8 +14,8 @@ const create = async board => {
   return boardsDB.createBoard(board);
 };
 
-const update = async (id, board) => {
-  return await boardsDB.updateBoard(id, board);
+const update = async (id, body) => {
+  return await boardsDB.updateBoard(id, body);
 };
 
 const remove = async id => {
