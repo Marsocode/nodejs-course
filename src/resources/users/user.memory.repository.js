@@ -8,10 +8,9 @@ const getAll = async () => {
 // если запрос по id, то делаем функцию get- поиска запращиваемого id (так как у нас пока просто массив с юзерами, то используем метод getUser внутри которого filter)
 const get = async id => {
   const user = await DB.getUser(id);
-  // если юзер не найден, то показываем ошибку
-  if (!user) {
-    throw new Error(`The user with id: ${id} is undefined`);
-  }
+  // if (!user) {
+  //   throw new Error(`The user with id: ${id} is undefined`);
+  // }
 
   return user;
 };
