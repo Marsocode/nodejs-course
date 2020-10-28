@@ -1,0 +1,342 @@
+{
+  message: 'TypeError: NOT_FOUND_ERROR is not a constructor\n' +
+    '    at Object.get (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\boards\\board.DB.repository.js:13:11)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:93:5)\n' +
+    '    at runNextTicks (internal/process/task_queues.js:62:3)\n' +
+    '    at processImmediate (internal/timers.js:412:9)\n' +
+    '    at async C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\boards\\board.router.js:18:19',
+  level: 'error',
+  timestamp: '2020-10-28T13:46:49.141Z'
+}
+{
+  message: 'TypeError: NOT_FOUND_ERROR is not a constructor\n' +
+    '    at Object.get (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.DB.repository.js:14:11)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:93:5)\n' +
+    '    at runNextTicks (internal/process/task_queues.js:62:3)\n' +
+    '    at processImmediate (internal/timers.js:412:9)\n' +
+    '    at async C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.router.js:19:18',
+  level: 'error',
+  timestamp: '2020-10-28T13:46:49.198Z'
+}
+{
+  message: 'TypeError: NOT_FOUND_ERROR is not a constructor\n' +
+    '    at Object.get (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.DB.repository.js:14:11)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:93:5)\n' +
+    '    at runNextTicks (internal/process/task_queues.js:62:3)\n' +
+    '    at processImmediate (internal/timers.js:412:9)\n' +
+    '    at async C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.router.js:19:18',
+  level: 'error',
+  timestamp: '2020-10-28T13:46:50.279Z'
+}
+{
+  message: 'TypeError: NOT_FOUND_ERROR is not a constructor\n' +
+    '    at Object.get (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.DB.repository.js:14:11)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:93:5)\n' +
+    '    at runNextTicks (internal/process/task_queues.js:62:3)\n' +
+    '    at processImmediate (internal/timers.js:412:9)\n' +
+    '    at async C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.router.js:19:18',
+  level: 'error',
+  timestamp: '2020-10-28T13:46:50.300Z'
+}
+{
+  message: 'TypeError: NOT_FOUND_ERROR is not a constructor\n' +
+    '    at Object.get (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.DB.repository.js:14:11)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:93:5)\n' +
+    '    at runNextTicks (internal/process/task_queues.js:62:3)\n' +
+    '    at processImmediate (internal/timers.js:412:9)\n' +
+    '    at async C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.router.js:19:18',
+  level: 'error',
+  timestamp: '2020-10-28T13:46:50.339Z'
+}
+{
+  message: 'TypeError: NOT_FOUND_ERROR is not a constructor\n' +
+    '    at Object.get (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.DB.repository.js:14:11)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:93:5)\n' +
+    '    at runNextTicks (internal/process/task_queues.js:62:3)\n' +
+    '    at processImmediate (internal/timers.js:412:9)\n' +
+    '    at async C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.router.js:19:18',
+  level: 'error',
+  timestamp: '2020-10-28T13:46:50.373Z'
+}
+{
+  message: 'TypeError: NOT_FOUND_ERROR is not a constructor\n' +
+    '    at Object.get (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.DB.repository.js:14:11)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:93:5)\n' +
+    '    at runNextTicks (internal/process/task_queues.js:62:3)\n' +
+    '    at processImmediate (internal/timers.js:412:9)\n' +
+    '    at async C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.router.js:19:18',
+  level: 'error',
+  timestamp: '2020-10-28T13:46:50.426Z'
+}
+{
+  message: 'TypeError: NOT_FOUND_ERROR is not a constructor\n' +
+    '    at Object.get (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\boards\\board.DB.repository.js:13:11)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:93:5)\n' +
+    '    at runNextTicks (internal/process/task_queues.js:62:3)\n' +
+    '    at processImmediate (internal/timers.js:412:9)\n' +
+    '    at async C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\boards\\board.router.js:18:19',
+  level: 'error',
+  timestamp: '2020-10-28T13:49:43.667Z'
+}
+{
+  message: 'TypeError: NOT_FOUND_ERROR is not a constructor\n' +
+    '    at Object.get (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.DB.repository.js:14:11)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:93:5)\n' +
+    '    at runNextTicks (internal/process/task_queues.js:62:3)\n' +
+    '    at processImmediate (internal/timers.js:412:9)\n' +
+    '    at async C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.router.js:19:18',
+  level: 'error',
+  timestamp: '2020-10-28T13:49:43.708Z'
+}
+{
+  message: 'TypeError: NOT_FOUND_ERROR is not a constructor\n' +
+    '    at Object.get (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.DB.repository.js:14:11)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:93:5)\n' +
+    '    at runNextTicks (internal/process/task_queues.js:62:3)\n' +
+    '    at processImmediate (internal/timers.js:412:9)\n' +
+    '    at async C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.router.js:19:18',
+  level: 'error',
+  timestamp: '2020-10-28T13:49:44.880Z'
+}
+{
+  message: 'TypeError: NOT_FOUND_ERROR is not a constructor\n' +
+    '    at Object.get (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.DB.repository.js:14:11)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:93:5)\n' +
+    '    at runNextTicks (internal/process/task_queues.js:62:3)\n' +
+    '    at processImmediate (internal/timers.js:412:9)\n' +
+    '    at async C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.router.js:19:18',
+  level: 'error',
+  timestamp: '2020-10-28T13:49:44.913Z'
+}
+{
+  message: 'TypeError: NOT_FOUND_ERROR is not a constructor\n' +
+    '    at Object.get (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.DB.repository.js:14:11)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:93:5)\n' +
+    '    at runNextTicks (internal/process/task_queues.js:62:3)\n' +
+    '    at processImmediate (internal/timers.js:412:9)\n' +
+    '    at async C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.router.js:19:18',
+  level: 'error',
+  timestamp: '2020-10-28T13:49:44.993Z'
+}
+{
+  message: 'TypeError: NOT_FOUND_ERROR is not a constructor\n' +
+    '    at Object.get (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.DB.repository.js:14:11)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:93:5)\n' +
+    '    at runNextTicks (internal/process/task_queues.js:62:3)\n' +
+    '    at processImmediate (internal/timers.js:412:9)\n' +
+    '    at async C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.router.js:19:18',
+  level: 'error',
+  timestamp: '2020-10-28T13:49:45.053Z'
+}
+{
+  message: 'TypeError: NOT_FOUND_ERROR is not a constructor\n' +
+    '    at Object.get (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.DB.repository.js:14:11)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:93:5)\n' +
+    '    at runNextTicks (internal/process/task_queues.js:62:3)\n' +
+    '    at processImmediate (internal/timers.js:412:9)\n' +
+    '    at async C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.router.js:19:18',
+  level: 'error',
+  timestamp: '2020-10-28T13:49:45.085Z'
+}
+{
+  message: "Error: Couldn't find a The board with id: 5f99772bcf9a3c3ec455d126 is undefined with:undefined\n" +
+    '    at Object.get (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\boards\\board.DB.repository.js:13:11)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:93:5)\n' +
+    '    at runNextTicks (internal/process/task_queues.js:62:3)\n' +
+    '    at processImmediate (internal/timers.js:412:9)\n' +
+    '    at async C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\boards\\board.router.js:18:19',
+  level: 'error',
+  timestamp: '2020-10-28T13:50:36.451Z'
+}
+{
+  message: "Error: Couldn't find a The task with boardId: 5f997729cf9a3c3ec455d115 taskId: 5f997729cf9a3c3ec455d118 is undefined with:undefined\n" +
+    '    at Object.get (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.DB.repository.js:14:11)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:93:5)\n' +
+    '    at runNextTicks (internal/process/task_queues.js:62:3)\n' +
+    '    at processImmediate (internal/timers.js:412:9)\n' +
+    '    at async C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.router.js:19:18',
+  level: 'error',
+  timestamp: '2020-10-28T13:50:36.480Z'
+}
+{
+  message: "Error: Couldn't find a The task with boardId: 5f99772ccf9a3c3ec455d12a taskId: 5f99772ccf9a3c3ec455d130 is undefined with:undefined\n" +
+    '    at Object.get (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.DB.repository.js:14:11)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:93:5)\n' +
+    '    at runNextTicks (internal/process/task_queues.js:62:3)\n' +
+    '    at processImmediate (internal/timers.js:412:9)\n' +
+    '    at async C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.router.js:19:18',
+  level: 'error',
+  timestamp: '2020-10-28T13:50:37.607Z'
+}
+{
+  message: "Error: Couldn't find a The task with boardId: 5f99772ccf9a3c3ec455d12a taskId: 5f99772ccf9a3c3ec455d12f is undefined with:undefined\n" +
+    '    at Object.get (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.DB.repository.js:14:11)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:93:5)\n' +
+    '    at runNextTicks (internal/process/task_queues.js:62:3)\n' +
+    '    at processImmediate (internal/timers.js:412:9)\n' +
+    '    at async C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.router.js:19:18',
+  level: 'error',
+  timestamp: '2020-10-28T13:50:37.619Z'
+}
+{
+  message: "Error: Couldn't find a The task with boardId: 5f99772ccf9a3c3ec455d12a taskId: 5f99772ccf9a3c3ec455d132 is undefined with:undefined\n" +
+    '    at Object.get (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.DB.repository.js:14:11)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:93:5)\n' +
+    '    at runNextTicks (internal/process/task_queues.js:62:3)\n' +
+    '    at processImmediate (internal/timers.js:412:9)\n' +
+    '    at async C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.router.js:19:18',
+  level: 'error',
+  timestamp: '2020-10-28T13:50:37.670Z'
+}
+{
+  message: "Error: Couldn't find a The task with boardId: 5f99772ccf9a3c3ec455d12a taskId: 5f99772ccf9a3c3ec455d131 is undefined with:undefined\n" +
+    '    at Object.get (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.DB.repository.js:14:11)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:93:5)\n' +
+    '    at runNextTicks (internal/process/task_queues.js:62:3)\n' +
+    '    at processImmediate (internal/timers.js:412:9)\n' +
+    '    at async C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.router.js:19:18',
+  level: 'error',
+  timestamp: '2020-10-28T13:50:37.718Z'
+}
+{
+  message: "Error: Couldn't find a The task with boardId: 5f99772ccf9a3c3ec455d12a taskId: 5f99772ccf9a3c3ec455d12e is undefined with:undefined\n" +
+    '    at Object.get (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.DB.repository.js:14:11)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:93:5)\n' +
+    '    at runNextTicks (internal/process/task_queues.js:62:3)\n' +
+    '    at processImmediate (internal/timers.js:412:9)\n' +
+    '    at async C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.router.js:19:18',
+  level: 'error',
+  timestamp: '2020-10-28T13:50:37.766Z'
+}
+{
+  message: 'CastError: Cast to ObjectId failed for value "3465634563456" at path "_id" for model "tasks"\n' +
+    '    at model.Query.exec (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\node_modules\\mongoose\\lib\\query.js:4381:21)\n' +
+    '    at Object.get (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.DB.repository.js:12:61)\n' +
+    '    at Object.get (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.service.js:5:44)\n' +
+    '    at C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.router.js:19:37\n' +
+    '    at C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\utils\\wrapAsync.js:3:5\n' +
+    '    at Layer.handle [as handle_request] (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\node_modules\\express\\lib\\router\\route.js:137:13)\n' +
+    '    at Route.dispatch (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\node_modules\\express\\lib\\router\\route.js:112:3)\n' +
+    '    at Layer.handle [as handle_request] (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\node_modules\\express\\lib\\router\\index.js:281:22\n' +
+    '    at param (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\node_modules\\express\\lib\\router\\index.js:354:14)\n' +
+    '    at param (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\node_modules\\express\\lib\\router\\index.js:365:14)\n' +
+    '    at Function.process_params (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\node_modules\\express\\lib\\router\\index.js:410:3)\n' +
+    '    at next (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\node_modules\\express\\lib\\router\\index.js:275:10)\n' +
+    '    at Function.handle (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\node_modules\\express\\lib\\router\\index.js:174:3)\n' +
+    '    at router (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\node_modules\\express\\lib\\router\\index.js:47:12)',
+  level: 'error',
+  timestamp: '2020-10-28T13:51:46.566Z'
+}
+{
+  message: 'CastError: Cast to ObjectId failed for value "3465634563456" at path "_id" for model "tasks"\n' +
+    '    at model.Query.exec (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\node_modules\\mongoose\\lib\\query.js:4381:21)\n' +
+    '    at Object.get (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.DB.repository.js:12:61)\n' +
+    '    at Object.get (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.service.js:5:44)\n' +
+    '    at C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.router.js:19:37\n' +
+    '    at C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\utils\\wrapAsync.js:3:5\n' +
+    '    at Layer.handle [as handle_request] (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\node_modules\\express\\lib\\router\\route.js:137:13)\n' +
+    '    at Route.dispatch (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\node_modules\\express\\lib\\router\\route.js:112:3)\n' +
+    '    at Layer.handle [as handle_request] (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\node_modules\\express\\lib\\router\\index.js:281:22\n' +
+    '    at param (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\node_modules\\express\\lib\\router\\index.js:354:14)\n' +
+    '    at param (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\node_modules\\express\\lib\\router\\index.js:365:14)\n' +
+    '    at Function.process_params (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\node_modules\\express\\lib\\router\\index.js:410:3)\n' +
+    '    at next (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\node_modules\\express\\lib\\router\\index.js:275:10)\n' +
+    '    at Function.handle (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\node_modules\\express\\lib\\router\\index.js:174:3)\n' +
+    '    at router (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\node_modules\\express\\lib\\router\\index.js:47:12)',
+  level: 'error',
+  timestamp: '2020-10-28T13:51:59.044Z'
+}
+{
+  message: 'CastError: Cast to ObjectId failed for value "3465634563456" at path "_id" for model "tasks"\n' +
+    '    at model.Query.exec (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\node_modules\\mongoose\\lib\\query.js:4381:21)\n' +
+    '    at Object.get (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.DB.repository.js:12:61)\n' +
+    '    at Object.get (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.service.js:5:44)\n' +
+    '    at C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.router.js:19:37\n' +
+    '    at C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\utils\\wrapAsync.js:3:5\n' +
+    '    at Layer.handle [as handle_request] (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\node_modules\\express\\lib\\router\\route.js:137:13)\n' +
+    '    at Route.dispatch (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\node_modules\\express\\lib\\router\\route.js:112:3)\n' +
+    '    at Layer.handle [as handle_request] (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\node_modules\\express\\lib\\router\\index.js:281:22\n' +
+    '    at param (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\node_modules\\express\\lib\\router\\index.js:354:14)\n' +
+    '    at param (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\node_modules\\express\\lib\\router\\index.js:365:14)\n' +
+    '    at Function.process_params (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\node_modules\\express\\lib\\router\\index.js:410:3)\n' +
+    '    at next (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\node_modules\\express\\lib\\router\\index.js:275:10)\n' +
+    '    at Function.handle (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\node_modules\\express\\lib\\router\\index.js:174:3)\n' +
+    '    at router (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\node_modules\\express\\lib\\router\\index.js:47:12)',
+  level: 'error',
+  timestamp: '2020-10-28T13:52:42.966Z'
+}
+{
+  message: 'CastError: Cast to ObjectId failed for value "3465634563456" at path "_id" for model "tasks"\n' +
+    '    at model.Query.exec (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\node_modules\\mongoose\\lib\\query.js:4381:21)\n' +
+    '    at Object.get (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.DB.repository.js:14:61)\n' +
+    '    at Object.get (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.service.js:5:44)\n' +
+    '    at C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.router.js:19:37\n' +
+    '    at C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\utils\\wrapAsync.js:3:5\n' +
+    '    at Layer.handle [as handle_request] (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\node_modules\\express\\lib\\router\\route.js:137:13)\n' +
+    '    at Route.dispatch (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\node_modules\\express\\lib\\router\\route.js:112:3)\n' +
+    '    at Layer.handle [as handle_request] (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\node_modules\\express\\lib\\router\\index.js:281:22\n' +
+    '    at param (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\node_modules\\express\\lib\\router\\index.js:354:14)\n' +
+    '    at param (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\node_modules\\express\\lib\\router\\index.js:365:14)\n' +
+    '    at Function.process_params (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\node_modules\\express\\lib\\router\\index.js:410:3)\n' +
+    '    at next (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\node_modules\\express\\lib\\router\\index.js:275:10)\n' +
+    '    at Function.handle (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\node_modules\\express\\lib\\router\\index.js:174:3)\n' +
+    '    at router (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\node_modules\\express\\lib\\router\\index.js:47:12)',
+  level: 'error',
+  timestamp: '2020-10-28T13:53:16.241Z'
+}
+{
+  message: 'CastError: Cast to ObjectId failed for value "3465634563456" at path "_id" for model "tasks"\n' +
+    '    at model.Query.exec (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\node_modules\\mongoose\\lib\\query.js:4381:21)\n' +
+    '    at model.Query.Query.then (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\node_modules\\mongoose\\lib\\query.js:4473:15)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:93:5)',
+  level: 'error',
+  timestamp: '2020-10-28T13:54:53.131Z'
+}
+{
+  message: "Error: Couldn't find a The task with boardId: 5f996f5ad8fe8133e8a25c11 taskId: 5f996f5ad8fe8133e8a25c65 is undefined with:undefined\n" +
+    '    at Object.get (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.DB.repository.js:17:11)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:93:5)\n' +
+    '    at runNextTicks (internal/process/task_queues.js:62:3)\n' +
+    '    at processImmediate (internal/timers.js:412:9)\n' +
+    '    at async C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.router.js:19:18',
+  level: 'error',
+  timestamp: '2020-10-28T13:55:25.598Z'
+}
+{
+  message: "Error: Couldn't find a The task with boardId: 5f996f5ad8fe8133e8a25c11 taskId: 5f996f5ad8fe8133e8a25c65 is undefined with:undefined\n" +
+    '    at Object.get (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.DB.repository.js:18:11)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:93:5)\n' +
+    '    at runNextTicks (internal/process/task_queues.js:62:3)\n' +
+    '    at processImmediate (internal/timers.js:412:9)\n' +
+    '    at async C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.router.js:19:18',
+  level: 'error',
+  timestamp: '2020-10-28T13:56:10.997Z'
+}
+{
+  message: 'TypeError: NOT_FOUND_ERROR is not a constructor\n' +
+    '    at Object.get (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.DB.repository.js:18:11)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:93:5)\n' +
+    '    at runNextTicks (internal/process/task_queues.js:62:3)\n' +
+    '    at processImmediate (internal/timers.js:412:9)\n' +
+    '    at async C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.router.js:19:18',
+  level: 'error',
+  timestamp: '2020-10-28T13:58:03.354Z'
+}
+{
+  message: 'TypeError: NOT_FOUND_ERROR is not a constructor\n' +
+    '    at Object.get (C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.DB.repository.js:18:11)\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:93:5)\n' +
+    '    at runNextTicks (internal/process/task_queues.js:62:3)\n' +
+    '    at processImmediate (internal/timers.js:412:9)\n' +
+    '    at async C:\\Users\\Lika\\Desktop\\rs_school_node\\nodejs-course\\src\\resources\\tasks\\task.router.js:19:18',
+  level: 'error',
+  timestamp: '2020-10-28T13:58:16.556Z'
+}

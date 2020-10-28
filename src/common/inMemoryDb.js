@@ -1,6 +1,6 @@
 // const User = require('../resources/users/user.model');
 // const Board = require('../resources/boards/board.model');
-const { logger } = require('../utils/logger');
+const { logger } = require('../logger/logger');
 const Task = require('../resources/tasks/task.model');
 const DB = [];
 const boardsDB = [];
