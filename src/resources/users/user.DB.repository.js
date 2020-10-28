@@ -1,6 +1,5 @@
 const { User } = require('./user.model');
 const { NOT_FOUND_ERROR } = require('../../errors/appError');
-// const ENTITY_NAME = 'user';
 const taskRepository = require('../tasks/task.DB.repository');
 
 const getAll = async () => {
@@ -37,7 +36,6 @@ const remove = async id => {
     throw new NOT_FOUND_ERROR(`The user with id: ${id} is undefined.`);
   }
   taskRepository.userNull(id);
-  // taskRepository.userstoNull(id)
   return User.findByIdAndDelete(id);
 };
 

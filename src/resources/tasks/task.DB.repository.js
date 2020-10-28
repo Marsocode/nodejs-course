@@ -9,12 +9,9 @@ const getAll = async boardId => {
 };
 
 const get = async (boardId, taskId) => {
-  console.log('>>>>');
-
-  const task = await Task.findOne({ _id: taskId, boardId });
-  console.log(`>>>> ${task}`);
+  const task = await Task.findOne({ _id: taskId, boardId }).exec();
+  // console.log(`>>>> ${task}`);
   if (!task) {
-    console.log('errrrr>>>>>>');
     throw new NOT_FOUND_ERROR(
       `The task with boardId: ${boardId} taskId: ${taskId} is undefined`
     );
@@ -26,7 +23,6 @@ const create = async (boardId, taskBody) => {
   // boardId
   const { title, order, description, userId, columnId } = taskBody;
   return Task.create({ title, order, description, userId, boardId, columnId });
-  // return Task.create(taskBody);
 };
 
 // обновляем данные пользователя (пользователь достается по id)

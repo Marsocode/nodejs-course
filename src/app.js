@@ -10,7 +10,6 @@ const taskRouter = require('./resources/tasks/task.router');
 const app = express();
 const swaggerDocument = YAML.load(path.join(__dirname, '../doc/api.yaml'));
 
-// err/log import
 const morgan = require('morgan');
 const winston = require('./logger/logger');
 const { NOT_FOUND } = require('http-status-codes');
