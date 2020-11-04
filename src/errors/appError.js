@@ -1,4 +1,4 @@
-const { NOT_FOUND } = require('http-status-codes');
+const { NOT_FOUND, UNAUTHORIZED, FORBIDDEN } = require('http-status-codes');
 
 class NotFoundError extends Error {
   constructor(entity, params, message) {
@@ -9,4 +9,22 @@ class NotFoundError extends Error {
   }
 }
 
-module.exports = { NOT_FOUND_ERROR: NotFoundError };
+class Unauthorized extends Error {
+  constructor(entity, params, message) {
+    super(message || 'Unauthorized user!');
+    this.status = UNAUTHORIZED;
+  }
+}
+
+class Forbidden extends Error {
+  constructor(entity, params, message) {
+    super(message || 'Wrong login/password');
+    this.status = FORBIDDEN;
+  }
+}
+
+module.exports = {
+  NOT_FOUND_ERROR: NotFoundError,
+  UNAUTHORIZED: Unauthorized,
+  FORBIDDEN: Forbidden
+};
